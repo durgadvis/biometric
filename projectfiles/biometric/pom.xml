@@ -7,7 +7,14 @@
   <packaging>war</packaging>
   <build>
     <sourceDirectory>src</sourceDirectory>
-    <plugins>
+
+	  <resources>
+		  <resource>
+			  <directory>src/Resource</directory>
+		  </resource>
+	  </resources>
+
+	  <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.3</version>
@@ -22,6 +29,7 @@
         <configuration>
           <warSourceDirectory>WebContent</warSourceDirectory>
           <failOnMissingWebXml>true</failOnMissingWebXml>
+		  <outputDirectory>C:\Softwares\apache\apache-tomcat-8.0.33\webapps\</outputDirectory>
         </configuration>
       </plugin>
 	   <plugin>
@@ -36,6 +44,13 @@
 		</plugin>
     </plugins>
   </build>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<slf4j.version>1.6.6</slf4j.version>
+		<logback.version>1.0.7</logback.version>
+	</properties>
+
   <dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -68,5 +83,21 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>5.1.26</version>
 		</dependency>
+
+	  	<dependency>
+		  <groupId>org.slf4j</groupId>
+		  <artifactId>slf4j-api</artifactId>
+		  <version>${slf4j.version}</version>
+		</dependency>
+	  	<dependency>
+		  <groupId>ch.qos.logback</groupId>
+		  <artifactId>logback-classic</artifactId>
+		  <version>${logback.version}</version>
+	  	</dependency>
+	  	<dependency>
+		  <groupId>ch.qos.logback</groupId>
+		  <artifactId>logback-core</artifactId>
+		  <version>${logback.version}</version>
+	  	</dependency>
 	</dependencies>
 </project>

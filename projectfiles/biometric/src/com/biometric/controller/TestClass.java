@@ -12,13 +12,13 @@ public class TestClass {
 		// TODO Auto-generated method stub
 		String url = "jdbc:mysql://localhost:3306/biometric";
 		String username = "root";
-		String password = "admin";
+		String password = "qwerty";
 
 		System.out.println("Connecting database...");
 
 		try{
 			java.sql.Connection connection = DriverManager.getConnection(url, username, password);
-			 System.out.println("Database connected!");
+			System.out.println("Database connected!");
 			String query = " insert into userdetails (User_Id, User_name, FingerPrint, phonenumber)"
 				        + " values (?, ?, ?, ?)";
 
